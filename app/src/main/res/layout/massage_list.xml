@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MessageListActivity">
+
+   <LinearLayout
+       android:id="@+id/linearLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/my_toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:layout_margin="5dp">
+
+         <GridLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:paddingHorizontal="10dp">
+
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back_button"
+
+                />
+
+
+            <TextView
+                android:id="@+id/note_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="ADD NOTE"
+                android:textColor="@color/sand"
+                android:textSize="20dp"
+
+                />
+
+            <ImageButton
+                android:id="@+id/right_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/right_button"
+
+                />
+
+         </GridLayout>
+      </androidx.appcompat.widget.Toolbar>
+
+
+   </LinearLayout>
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/Recycle_view_message"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/linearLayout"
+       android:layout_marginTop="10dp"
+       
+       />
+   <androidx.cardview.widget.CardView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentEnd="true"
+       app:cardCornerRadius="30dp"
+       android:padding="10dp"
+       android:layout_marginRight="20dp"
+       android:layout_marginBottom="30dp"
+       android:elevation="30dp"
+       >
+   <ImageButton
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:backgroundTint="@color/sky"
+       android:background="@drawable/add_button"
+       android:backgroundTintMode="screen"
+       android:elevation="20dp"
+       android:id="@+id/add_new"
+
+
+      ></ImageButton>
+   </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
