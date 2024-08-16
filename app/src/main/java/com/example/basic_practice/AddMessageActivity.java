@@ -12,8 +12,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.basic_practice.helper.*;
 
@@ -45,6 +48,8 @@ public class AddMessageActivity extends AppCompatActivity {
         databaseManegar = new DatabaseManegar(this);
         textView=findViewById(R.id.note_title);
 
+        Toolbar toolbar =findViewById(R.id.my_toolbar);
+       setSupportActionBar(toolbar);
 
 //        String data=getIntent().getStringExtra("ram");
 //        Log.d("ram"," "+getIntent().getStringExtra("ram"));
@@ -193,4 +198,5 @@ public class AddMessageActivity extends AppCompatActivity {
     }
 
 
+ 
 }

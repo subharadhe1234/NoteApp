@@ -15,7 +15,7 @@
        android:layout_height="wrap_content">
 
       <androidx.appcompat.widget.Toolbar
-          android:id="@+id/my_toolbar"
+          android:id="@+id/my_toolbar_list"
           android:layout_width="match_parent"
           android:layout_height="?attr/actionBarSize"
           android:layout_margin="5dp">
@@ -25,36 +25,18 @@
              android:layout_height="wrap_content"
              android:paddingHorizontal="10dp">
 
-
-            <ImageButton
-                android:id="@+id/btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/back_button"
-
-                />
-
-
             <TextView
-                android:id="@+id/note_title"
+                android:id="@+id/mynotes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="ADD NOTE"
+                android:text="My Note"
                 android:textColor="@color/sand"
-                android:textSize="20dp"
+                android:textSize="30dp"
 
                 />
 
-            <ImageButton
-                android:id="@+id/right_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/right_button"
 
-                />
 
          </GridLayout>
       </androidx.appcompat.widget.Toolbar>
@@ -68,7 +50,7 @@
        android:layout_height="wrap_content"
        android:layout_below="@+id/linearLayout"
        android:layout_marginTop="10dp"
-       
+
        />
    <androidx.cardview.widget.CardView
        android:layout_width="wrap_content"

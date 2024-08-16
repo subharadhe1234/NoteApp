@@ -4,13 +4,18 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -31,6 +36,7 @@ public class MessageListActivity extends AppCompatActivity {
     DatabaseManegar databaseManegar;
     ImageButton add_new_message;
     Cursor cursor;
+//    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,10 @@ public class MessageListActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+//        toolbar add
+       Toolbar toolbar=findViewById(R.id.my_toolbar_list);
+        setSupportActionBar(toolbar);
 //        recycle view find view id and set layout manager
         Recycle_view_messages = findViewById(R.id.Recycle_view_message);
         Recycle_view_messages.setLayoutManager(new LinearLayoutManager(this));
@@ -59,9 +69,6 @@ public class MessageListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
         /*
          *   this is fist element of the array list
          * add fist element of the cursor to array list
@@ -74,9 +81,7 @@ public class MessageListActivity extends AppCompatActivity {
                 String body = cursor.getString(2);
 //                add data to array list
                 messagesArrayList.add(new Messages(id, title, body));
-            } while (cursor.moveToNext());
-
-        }
+            } while (cursor.moveToNext()); }
 
         /*
          * object of message adapter
@@ -89,5 +94,25 @@ public class MessageListActivity extends AppCompatActivity {
     public void refressData() {
         messagesAdapter = new Message_Adapter(this, messagesArrayList);
         Recycle_view_messages.setAdapter(messagesAdapter);
+    }
+    //        add menu to toolbar
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.my_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.home) {
+            Toast.makeText(this, "home seected", Toast.LENGTH_SHORT).show();
+        } else if (item.getItemId()==R.id.about) {
+            Toast.makeText(this, "about seected", Toast.LENGTH_SHORT).show();
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

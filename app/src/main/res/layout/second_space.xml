@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="ADD NOTE"
+                android:text="My Notes"
                 android:id="@+id/note_title"
                 android:textColor="@color/sand"
                 android:textSize="20dp"
